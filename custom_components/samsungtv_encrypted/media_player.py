@@ -454,12 +454,12 @@ class SamsungTVDevice(MediaPlayerDevice):
 
     def getSourceList(self):
         sources = {}
-        source_names = self.SendSOAP('smp_4_', 'urn:samsung.com:service:MainTVAgent2:1', 'GetSourceList', '',
+        source_names = self.SendSOAP('smp_2_', 'urn:samsung.com:service:MainTVAgent2:1', 'GetSourceList', '',
                                      'sourcetype')
         if source_names:
-            source_ids = self.SendSOAP('smp_4_', 'urn:samsung.com:service:MainTVAgent2:1', 'GetSourceList', '', 'id')
+            source_ids = self.SendSOAP('smp_2_', 'urn:samsung.com:service:MainTVAgent2:1', 'GetSourceList', '', 'id')
             if source_ids:
-                sources_connected = self.SendSOAP('smp_4_', 'urn:samsung.com:service:MainTVAgent2:1', 'GetSourceList',
+                sources_connected = self.SendSOAP('smp_2_', 'urn:samsung.com:service:MainTVAgent2:1', 'GetSourceList',
                                                   '', 'connected')
                 if sources_connected:
                     del source_ids[0]
